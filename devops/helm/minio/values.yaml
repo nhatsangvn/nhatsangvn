@@ -1,0 +1,14 @@
+console:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-staging
+    host: minio.23.sohan.cloud
+    tls:
+    - hosts:
+      - minio.23.sohan.cloud
+      secretName: minio-tls
+    path: /
+    pathType: Prefix
+
